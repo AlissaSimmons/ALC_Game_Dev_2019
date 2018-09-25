@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
+	public static int Score;
 
 Text ScoreText;
 
@@ -15,9 +16,19 @@ Text ScoreText;
 	
 	// Update is called once per frame
 	void Update () {
-		if (score < 0)
+		if (Score < 0)
 			Score = 0;
 
 			ScoreText.text = " " + Score;
 	}
+
+	public static void AddPoints (int PointsToAdd) {
+		Score += PointsToAdd;
+}
+
+	// public static void Reset () {
+	//  Score=0;
+	// }
+
+
 }
