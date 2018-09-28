@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class GameManager : MonoBehaviour {
+public class ScoreManager : MonoBehaviour {
 	public static int Score;
 
 Text ScoreText;
