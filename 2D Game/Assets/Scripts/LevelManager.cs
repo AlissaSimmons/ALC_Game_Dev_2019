@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 
 	public GameObject CurrentCheckPoint;
-	private Rigidbody2D Protagonist;
+	public Rigidbody2D Protagonist;
 
 	// Particles
 	public GameObject DeathParticle;
@@ -22,14 +22,14 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Protagonist = FindObjectOfType<Rigidbody2D> ();
+		// Protagonist = FindObjectOfType<Rigidbody2D> ();
 	}
 
 	public void RespawnPlayer(){
 		StartCoroutine ("RespawnProtagonistCo");
 	}
 
-	public IEnumerator RespawnPlayerCo(){
+	public IEnumerator RespawnProtagonistCo(){
 		// Generate Death Particle
 		Instantiate (DeathParticle, Protagonist.transform.position, Protagonist.transform.rotation);
 		// Hide Protagonist
