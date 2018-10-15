@@ -286,6 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e286928a46e994b75b5a1b613de35712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FirePoint: {fileID: 853875379}
+  Projectile: {fileID: 1253982633}
 --- !u!1 &100817864
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +299,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint_01
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5558,6 +5560,7 @@ GameObject:
   - component: {fileID: 1253982636}
   - component: {fileID: 1253982635}
   - component: {fileID: 1253982634}
+  - component: {fileID: 1253982638}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -5658,6 +5661,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1253982638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1253982633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15906d29471241bf93cf09c25377b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 2
+  Protagonist: {fileID: 9176951}
+  EnemyDeath: {fileID: 470660796}
+  ProjectileParticle: {fileID: 1253982633}
+  PointsForKill: 2
 --- !u!1 &1376082180
 GameObject:
   m_ObjectHideFlags: 0
