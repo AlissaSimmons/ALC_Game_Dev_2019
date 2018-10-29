@@ -6,7 +6,6 @@ public class Projectile : MonoBehaviour {
 	public float Speed;
 	public Rigidbody2D Protagonist;
 	public GameObject EnemyDeath;
-	public GameObject ProjectileParticle;
 	public int PointsForKill;
 
 	// Use this for initialization
@@ -25,9 +24,7 @@ public class Projectile : MonoBehaviour {
 			Destroy (other.gameObject);
 			ScoreManager.AddPoints (PointsForKill);
 		}
-		
-		
-		Instantiate(ProjectileParticle, transform.position, transform.rotation);
+		Instantiate(EnemyDeath, transform.position, transform.rotation);
 		Destroy (gameObject);
 	}
 }
