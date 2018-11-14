@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 	public float Speed;
-	public Rigidbody2D Protagonist;
+	public float TimeOut;
+	public GameObject Protagonist;
 	public GameObject EnemyDeath;
 	public int PointsForKill;
 
 	// Use this for initialization
 	void Start () {
+		Protagonist = GameObject.Find("Protagonist");
+		EnemyDeath = Resources.Load("Prefabs/Death_PS") as GameObject;
+		ProjectileParticle = Resources.Load("Prefabs/Respawn_PS") as GameObject;
 		if(Protagonist.transform.localScale.x < 0)
 		Speed = -Speed;
+
+		//Destroys Projectile after x seconds
+		Destroy(gameObject,TiemOut);
 	}
 	
 	// Update is called once per frame
@@ -23,8 +30,13 @@ public class Projectile : MonoBehaviour {
 			Instantiate(EnemyDeath, other.transform.position, other.transform.rotation);
 			Destroy (other.gameObject);
 			ScoreManager.AddPoints (PointsForKill);
-		}
-		Instantiate(EnemyDeath, transform.position, transform.rotation);
+			
+		// Instantiate(ProjectileParticle, transform.position, transform.rotation);
 		Destroy (gameObject);
+
+		void OnCollisionEnter2D(Collison2D other){
+		Instantiate(ProjectileParticle, transform.position, transform.rotation);
+		Destroy (gameObject);
+		}
 	}
 }
