@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : MonoBehaviour{
 	public float Speed;
 	public float TimeOut;
 	public GameObject Protagonist;
@@ -30,13 +30,15 @@ public class Projectile : MonoBehaviour {
 			Instantiate(EnemyDeath, other.transform.position, other.transform.rotation);
 			Destroy (other.gameObject);
 			ScoreManager.AddPoints (PointsForKill);
+		}
 			
 		// Instantiate(ProjectileParticle, transform.position, transform.rotation);
 		Destroy (gameObject);
+	}
+		
 
 		void OnCollisionEnter2D(Collison2D other){
-		Instantiate(ProjectileParticle, transform.position, transform.rotation);
+		Instantiate(ProjectileParticle,transform.position,transform.rotation);
 		Destroy (gameObject);
-		}
 	}
 }
