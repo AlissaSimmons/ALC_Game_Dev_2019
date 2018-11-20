@@ -62,10 +62,10 @@ private bool grounded;
 	
 		//Player flip
 		if(GetComponent<Rigidbody2D>().velocity.x > 0)
-			transform.localScale = new Vector3(0.2f,0.2f,1f);
+			transform.localScale = new Vector3(6f,6f,1f);
 		
 		else if (GetComponent<Rigidbody2D>().velocity.x < 0)
-			transform.localScale = new Vector3(-0.2f,0.2f,1f);
+			transform.localScale = new Vector3(-6f,6f,1f);
 	
 	}
 	public void Jump(){
