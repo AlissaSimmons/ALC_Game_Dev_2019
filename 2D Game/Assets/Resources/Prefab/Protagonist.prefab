@@ -122,8 +122,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070340229122098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.65, y: 1.06, z: -0.12845835}
-  m_LocalScale: {x: 6.221207, y: 5.692035, z: 1}
+  m_LocalPosition: {x: -8.818, y: -3.058, z: -0.12845835}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children:
   - {fileID: 4267235107380076}
   - {fileID: 4584990126049808}
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 4584990126049808}
-  Projectile: {fileID: 0}
+  Projectile: {fileID: 1080107356705892, guid: 4a36cdc22e9314b8da277c92501197e8, type: 2}
 --- !u!114 &114779799482693044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpHeight: 6
+  jumpHeight: 15
   moveVelocity: 1
   groundCheck: {fileID: 4872587653735780}
   groundCheckRadius: 0.5
