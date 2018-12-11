@@ -17,9 +17,11 @@ public float groundCheckRadius;
 public LayerMask whatIsGround;
 private bool grounded;
 
+public Animator animator;
 	// Use this for initialization
 	void Start () {
-		
+		animator.Setbool("isWalking", false);
+		animator.Setbool("isJumping", false);
 	}
 
 	void FixedUpdate () {
@@ -33,10 +35,13 @@ private bool grounded;
 		if(Input.GetKeyDown (KeyCode.Space)&& grounded){
 			Jump();
 		}
+		else if(Input.GetKeyUp (KeyCode.Space))
 
 		//Double jump code 
-		if(grounded)
+		if(grounded){
 			doubleJump = false;
+			animator.SetBool("isJumping", false);
+		}
 
 		if(Input.GetKeyDown (KeyCode.Space)&& !doubleJump && !grounded){
 				Jump();
@@ -50,11 +55,21 @@ private bool grounded;
 		if(Input.GetKey (KeyCode.D)){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			moveVelocity = moveSpeed;
+			animator.SetBool("isWalking",true);
 		}
 		
+		else if(Input.GetKey.D){
+			animator.SetBool("isWalking", false);
+		}
+
 		if(Input.GetKey (KeyCode.A)){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			moveVelocity = -moveSpeed;
+			animator.SetBool("isWalking",true);
+		}
+		
+		else if(Input.GetKey.A){
+			animator.SetBool("isWalking", false);
 		}
 		GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 
@@ -70,5 +85,6 @@ private bool grounded;
 	}
 	public void Jump(){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+		animtor.SetBool("isJumping", true);
 	}
 }
