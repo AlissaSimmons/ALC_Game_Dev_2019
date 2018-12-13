@@ -20,8 +20,8 @@ private bool grounded;
 public Animator animator;
 	// Use this for initialization
 	void Start () {
-		animator.Setbool("isWalking", false);
-		animator.Setbool("isJumping", false);
+		animator.SetBool("isWalking", false);
+		animator.SetBool("isJumping", false);
 	}
 
 	void FixedUpdate () {
@@ -58,7 +58,7 @@ public Animator animator;
 			animator.SetBool("isWalking",true);
 		}
 		
-		else if(Input.GetKey.D){
+		else if(Input.GetKey (KeyCode.D)){
 			animator.SetBool("isWalking", false);
 		}
 
@@ -68,7 +68,7 @@ public Animator animator;
 			animator.SetBool("isWalking",true);
 		}
 		
-		else if(Input.GetKey.A){
+		else if(Input.GetKey (KeyCode.A)){
 			animator.SetBool("isWalking", false);
 		}
 		GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
@@ -85,6 +85,6 @@ public Animator animator;
 	}
 	public void Jump(){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-		animtor.SetBool("isJumping", true);
+		animator.SetBool("isJumping", true);
 	}
 }
